@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -32,8 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider defaultTheme="system" attribute="class">
-          {children}
-          <ThemeToggle />
+          <TooltipProvider>
+            {children}
+            <ThemeToggle />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
