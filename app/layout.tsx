@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ViewportIndicator } from "@/components/viewport-indicator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           <TooltipProvider>
             {children}
             <ThemeToggle />
+            <ViewportIndicator />
           </TooltipProvider>
         </ThemeProvider>
       </body>
