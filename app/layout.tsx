@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
+import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ViewportIndicator } from "@/components/viewport-indicator";
@@ -33,13 +34,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider defaultTheme="system" attribute="class">
-          <TooltipProvider>
-            {children}
-            <ThemeToggle />
-            <ViewportIndicator />
-          </TooltipProvider>
-        </ThemeProvider>
+        <HydrationOverlay>
+          <ThemeProvider defaultTheme="system" attribute="class">
+            <TooltipProvider>
+              {children}
+              <ThemeToggle />
+              <ViewportIndicator />
+            </TooltipProvider>
+          </ThemeProvider>
+        </HydrationOverlay>
       </body>
     </html>
   );
