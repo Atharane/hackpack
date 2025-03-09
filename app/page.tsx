@@ -1,12 +1,6 @@
 import { GithubAnimated } from '@/components/github';
 
-import {
-	FramerMotion,
-	NextJs,
-	ShadcnUI,
-	BetterAuth,
-	TanstackQuery
-} from '@/components/icons';
+import { FramerMotion, NextJs, ShadcnUI, BetterAuth, TanstackQuery } from '@/components/icons';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
