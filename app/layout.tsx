@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Manrope, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ViewportIndicator } from '@/components/viewport-indicator';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { ThemeProvider } from 'next-themes';
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin']
+const manrope = Manrope({
+	variable: '--font-manrope',
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700']
 });
 
 const geistMono = Geist_Mono({
@@ -27,7 +28,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+			<body className={`${manrope.className} ${geistMono.variable} antialiased`}>
 				<ThemeProvider defaultTheme="system" attribute="class">
 					{children}
 					<ThemeToggle />
